@@ -1,0 +1,14 @@
+page-about {
+  [appBG] {
+      //background: linear-gradient(0deg, #eeeef1 0%, white 70%, white 100%);
+      background: url('../../assets/images/background/app_bg.png') no-repeat center;
+      background-size: cover;
+      
+    }
+    img {
+      max-width: 72px;
+      max-height: 72px;
+      margin-bottom: 24px;
+      display: block;
+    }
+}

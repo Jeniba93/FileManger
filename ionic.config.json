@@ -1,0 +1,7 @@
+{
+  "name": "FileManager",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

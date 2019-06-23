@@ -1,0 +1,81 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{'SETTINGS.TITLE' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-list my-set-list>
+    <ion-item-divider color="accent">
+      <span>{{'SETTINGS.BASIC' | translate}}</span>
+    </ion-item-divider>
+    <!-- <ion-item>
+        <ion-icon class='siva-icon-language-1' color="md-violet" item-start></ion-icon>
+        <ion-label color="gray">{{'SETTINGS.APP_LANGUAGE' | translate}}</ion-label>
+        <ion-select [(ngModel)]="languageSelect.selectedItem" 
+            (ionChange)="onChangeLanguage()"
+            multiple="false" 
+            [selectOptions]="{'title':(languageSelect.title | translate),'subTitle':(languageSelect.subTitle | translate)}" 
+            okText="{{'COMMON.APPLY' | translate}}" 
+            cancelText="{{'COMMON.CANCEL' | translate}}">
+            <ion-option *ngFor="let item of languageSelect.items" [value]="item.id">{{item.TCODE | translate}}</ion-option>
+        </ion-select>
+      </ion-item> -->
+      
+      <!-- <ion-item >
+          <ion-icon class='siva-icon-adjust' item-start color="favorite"></ion-icon>
+          <ion-label>Enable Option 1</ion-label>
+          <ion-toggle color="secondary"></ion-toggle>
+        </ion-item>
+        <ion-item >
+          <ion-icon class='siva-icon-list-add' item-start color="favorite"></ion-icon>
+          <ion-label>Enable Option 2</ion-label>
+          <ion-toggle color="secondary"></ion-toggle>
+        </ion-item> 
+         
+       <ion-item-divider border-top color="accent">
+         <span>Scan History</span>
+        </ion-item-divider>
+        <ion-item>
+          <ion-label color="dark">Always Maintain</ion-label>
+          <ion-radio name="history" value="always" checked></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label color="dark">Never Maintain</ion-label>
+          <ion-radio name="history" value="locked"></ion-radio>
+        </ion-item>
+      <ion-item-divider color="accent">
+          <span>Other</span>
+      </ion-item-divider>
+      
+      <button ion-item>
+        <ion-icon class='siva-icon-help-circled-1' item-start color="favorite"></ion-icon>
+        <ion-label>{{'SETTINGS.HELP' | translate}}</ion-label>
+      </button>-->
+      <button ion-item>
+          <ion-icon class='siva-icon-info-circled-1' item-start color="md-violet"></ion-icon>
+        <ion-label color="gray">{{'SETTINGS.APP_VERSION' | translate}}</ion-label>
+        <ion-note item-end>{{'SETTINGS.VERSION' | translate}}</ion-note>
+      </button>   
+      <button ion-item (click)="goToUserProfile()">
+        <ion-icon class='siva-icon-user-circle-o' item-start color="md-violet"></ion-icon>
+        <ion-label color="gray">{{'SETTINGS.PROFILE' | translate}}</ion-label>
+        <ion-note item-end>{{USER_INFO.username}}</ion-note>
+     </button>
+     <button ion-item (click)="goToSubscription()">
+      <ion-icon class='siva-icon-crown' item-start color="md-violet"></ion-icon>
+      <ion-label color="gray">{{'SETTINGS.SUBSCRIPTION' | translate}}</ion-label>
+      <ion-note item-end>{{USER_INFO['subscription']}}</ion-note>
+   </button>
+     <button ion-item (click)="goToUserAbout()">
+      <ion-icon class='siva-icon-info-1' item-start color="md-violet"></ion-icon>
+      <ion-label color="gray">{{'SETTINGS.ABOUT' | translate}}</ion-label>
+    </button>
+     <button ion-item (click)="logoutMe()">
+        <ion-icon class='siva-icon-logout-2' item-start color="md-violet"></ion-icon>
+        <ion-label color="red">{{'SETTINGS.LOGOUT' | translate}}</ion-label>
+      </button>
+  </ion-list>
+</ion-content>

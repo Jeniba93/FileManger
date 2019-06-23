@@ -1,0 +1,58 @@
+page-folder-tree {
+    [no-folders]{
+        ion-label{
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+        [info-image]{
+            background-image: url(../../assets/images/background/noFolders.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+            height: -webkit-fill-available;
+            max-height: 250px;
+            width: 80%;
+            margin: 10px auto; 
+        }
+    }
+    [ion-item]{
+        ion-icon{
+            border-radius: 10px;
+            &.light-box{
+                background: rgba(0, 0, 0, 0.15);
+                color: rgba(0, 0, 0, 0.2);
+            }
+            &.red-box{
+                background: rgba(255, 0, 0, 0.15);
+                color: rgb(255, 0, 0);
+            }
+            &.green-box{
+                background: rgba(0, 161, 27, 0.15);
+                color: rgb(0, 161, 27);
+            }
+            &.yellow-box{
+                background: rgba(243, 219, 0, 0.3);
+                color: rgb(241, 205, 0);
+            }
+            &.rose-box{
+                background: rgba(212, 0, 166, 0.15);
+                color: rgb(212, 0, 166);
+            }
+            &.violet-box{
+                background: rgba(150, 0, 180, 0.15);
+                color: rgb(150, 0, 180);
+            }
+            &.blue-box{
+                background: rgba(15, 0, 155, 0.15);
+                color: rgb(15, 0, 155);
+            }
+            &.sky-box{
+                background: rgba(0, 122, 192, 0.15);
+                color: rgb(0, 122, 192);
+            }
+        }
+        .item-inner{
+            margin-left: 10px !important;
+        }
+    }
+}

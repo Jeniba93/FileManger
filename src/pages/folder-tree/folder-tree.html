@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{'FOLDER_TREE.TITLE' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-grid style="height: 100%" *ngIf="LOC_VM.noFolders && VM.folders.length <= 0">
+      <ion-row justify-content-center align-items-center style="height: 100%">
+        <ion-col col-12 no-folders>
+          <ion-label text-center color="gray" >{{'FOLDER_TREE.NO_FOLDERS' | translate}}</ion-label>
+          <div info-image></div> 
+        </ion-col>  
+    </ion-row>
+  </ion-grid>
+  <ion-list *ngIf="!LOC_VM.noFolders && VM.folders.length <= 0">
+      <ion-item-divider color="accent">{{'FOLDER_TREE.CAPTION' | translate}}</ion-item-divider>
+      <button ion-item>
+          <ion-icon padding item-start class="siva-icon-folder light-box" ></ion-icon>
+          <skelton-item radius="2px" height="15px" width="80%"></skelton-item>
+          <skelton-item radius="2px" height="15px" width="60%"></skelton-item>
+      </button>
+      <button ion-item>
+          <ion-icon padding item-start class="siva-icon-folder light-box" ></ion-icon>
+          <skelton-item radius="2px" height="15px" width="80%"></skelton-item>
+          <skelton-item radius="2px" height="15px" width="60%"></skelton-item>
+      </button>
+      <button ion-item>
+          <ion-icon padding item-start class="siva-icon-folder light-box" ></ion-icon>
+          <skelton-item radius="2px" height="15px" width="80%"></skelton-item>
+          <skelton-item radius="2px" height="15px" width="60%"></skelton-item>
+      </button>
+    </ion-list>
+  <ion-list *ngIf="(VM.folders).length > 0">
+      <ion-item-divider color="accent">{{'FOLDER_TREE.CAPTION' | translate}}</ion-item-divider>
+      <button ion-item *ngFor="let item of VM.folders; let itemIndex = index;"
+      (click)="goToThisFolder(item, colorBoxs[(itemIndex % 7)])"
+      [ngClass]="{'new-folder' : item.fStatus == 'new'}">
+      <ion-icon padding item-start class="siva-icon-folder" [ngClass]="colorBoxs[(itemIndex % 7)]"></ion-icon>
+        <h2>{{item.fName}}</h2>
+        <p style="margin-top: 5px;">{{'COMMON.TOTAL_ITEM' | translate}} <b>{{item.ftotal_files}}</b></p>
+        <p style="font-size: 12px;margin-top: 5px;">{{'FILE_TREE.LASTUPDATE' | translate}} {{item.fuplaod_date | date:"dd/MM/yyyy hh:mm a" | lowercase}}</p>
+        <!-- <ion-note style="font-size: 12px;" item-end>{{item.fuplaod_date | date:"dd/MM/yyyy hh:mm a" | lowercase}}</ion-note> -->
+      </button>
+    </ion-list>
+</ion-content>

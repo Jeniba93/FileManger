@@ -1,0 +1,206 @@
+{
+	"APP_NAME":"File Manager",
+	"APP_DETAILS":"File Manager app",
+	"COMMON":{
+		"OK":"Ok",
+		"CANCEL":"Cancel",
+		"APPLY":"Apply",
+		"CHECK":"Check",
+		"CODE":"Code",
+		"LOCATION":"Location",
+		"TOTAL_ITEM":"Total Item(s) : ",
+		"HOME":"Home",
+		"FOLDER_TREE":"Folders",
+		"SETTINGS":"Settings",
+		"GO_TO_SETTINGS":"Go to settings",
+		"EXIT":"Exit App",
+
+		"MSG":{
+			"NO_INTERNET":"No internet connection",
+			"NO_INTERNET_DETAIL":"Please check your internet connection",
+			"ERR_SERVER_CONCTN":"Server connection problem",
+			"ERR_SERVER_CONCTN_DETAIL":"Please check your server connection or contact admin",
+			"CHECK_LOCATION_OPT":"Check location option",
+			"CHECK_LOCATION_OPT_DETAIL":"Please check your location option is enable or not.",
+			"EMAIL_NOT_YET_ACTIVATE": "User email not yet activated. Please verify the email to activate.",
+			"EMAIL_ACTIVATE_PENDING": "E-mail activation pending",
+			"CURRENTLY_NO_LOCATION":"Currently no location",
+			"SAVE_WITHOUT_LOCATION":"Are you sure process without location ?",
+			"ARE_SURE_EXIT":"Are you sure want to exit from app ?"
+		},
+		"LOADER_MSG":{
+			"LOADING": "Loading ...",
+			"LOGIN_LODER": "Verifying user ...",
+			"REGISTER_LODER": "Processing ...",
+			"LOCATION_LODER": "Fetching Location ..."
+		}
+	},
+	"LOGIN":{
+		"USER_NAME"        : "Enter your username / Email",
+		"PASSWORD"        : "Enter your password",
+		"LAB_USER_NAME"   : "USERNAME / E-MAIL",
+		"LAB_PASSWORD"   : "PASSWORD",
+		"REGISTER"        : "Register now!",
+		"FORGOT_PASSWORD"  : "Forgot password?",
+		"LOGIN"           : "Login",
+		"TITLE"           : "Login to your account",
+		"FORGOT_PASS_REQ" :"Password request",
+		"FORGOT_PASS_REQ_MSG":"We send you the change password request URL to your registered E-mail",
+		"SEND":"Send Request",
+		"DONT_ACCOUNT":"Don't have account?",
+		"SEND_ACT_MAIL":"Send activation mail",
+
+		"SUCCESS":{
+			"LOGIN": "Welcome {{username}} !",
+			"LOGOUT": "Logout Successfully !",
+			"FORGOT_REQ_MAIL":"Request Send Successfully !",
+			"RESEND_ACT_REQ_MAIL": "Activation mail resend successfully !",
+			"RESEND_ACT_REQ_MAIL_DETAIL": "Please verify your account, verification URL sent to your registered E-mail ID."
+		},
+		"ERROR":{
+			"LOGIN__FAILED_TITLE": "Authentication failed !",
+			"LOGIN__FAILED_SUB_TITLE_1": "User E-mail not yet activated.",
+			"LOGIN__FAILED_SUB_TITLE_2": "Please check your username or password.",
+			"LOGIN__FAILED_SUB_TITLE_3": "Not an active user.",
+			"LOGIN__FAILED_SUB_TITLE_4": "Username not found.",
+			"FORGOT_REQ_FAILED": "Forgot mail send failed !",
+			"RESEND_ACT_REQ_MAIL_FAILED": "Activation mail resend failed !",
+
+			"USERNAME_REQUIRED":" * User name required",
+			"USERNAME_MIN4":" * Minimum 4 characters",
+			"USERNAME_MAX20":" * Maximum 20 characters",
+			"USERNAME_ALPHA":" * Just use alphabet and number character",
+			"PASSWORD_REQUIRED":" * Password required",
+			"PASSWORD_MIN4":" * Minimum 4 characters",
+			"PASSWORD_MAX20":" * Maximum 20 characters",
+			"FORGOT_REQ_MAIL":"Request Send Failed !"
+		}
+	},
+	"REGISTER":{
+		"USER_NAME"      : "Enter your username",
+		"PASSWORD"       : "Enter your password",
+		"E_MAIL"      : "Your e-mail address",
+		"COUNTRY"      : "Where are you from?",
+		"CITY"       : "Your home town",
+		"LAB_USER_NAME"   : "USERNAME",
+		"LAB_PASSWORD"   : "PASSWORD",
+		"LAB_E_MAIL"   : "E-MAIL",
+		"LAB_COUNTRY"   : "COUNTRY",
+		"LAB_CITY"   : "CITY",
+		"REGISTER"        : "Register",
+		"LOGIN"           : "Login",
+		"TITLE"           : "Register your new account",
+		"SUCCESS":{
+			"REGISTER_TITLE": "Account registered successfully !",
+			"REGISTER_SUBTITLE": "Please verify your account after admin approval."
+		},
+		"ERROR":{
+			"REG_FAILED_TITLE": "Registration Failed !",
+			"REG_FAILED_SUB_TITLE": "Please verify your information.",
+
+			"USERNAME_REQUIRED":" * User name required",
+			"USERNAME_MIN4":" * Minimum 4 characters",
+			"USERNAME_MAX20":" * Maximum 20 characters",
+			"USERNAME_ALPHA":" * Just use alphabet and number character",
+
+			"PASSWORD_REQUIRED":" * Password required",
+			"PASSWORD_MIN4":" * Minimum 4 characters",
+			"PASSWORD_MAX20":" * Maximum 20 characters",
+
+			"EMAIL_REQUIRED":" * e-mail required",
+			"EMAIL_PATERN":" * Email address invalid",
+
+			"COUNTRY_REQUIRED":" * Country required",
+			"COUNTRY_PATERN":" * Just use alphabet character",
+
+			"CITY_REQUIRED":" * City required",
+			"CITY_PATERN":" * Just use alphabet character"
+		}
+
+	},
+	"HOME": {
+		
+	},
+	"FOLDER_TREE":{
+		"TITLE":"Folders",
+		"NO_FOLDERS":"Currently no folder(s) for you",
+		"CAPTION":"Your Folder(s)"
+	},
+	"FILE_TREE":{
+		"TITLE":"Files",
+		"NO_FOLDERS":"Currently no file(s) for you",
+		"FILE_SIZE":"File Size : ",
+		"LASTUPDATE":"Last Update : "
+	},
+	"USER_PROFILE":{
+		"TITLE":"User Profile",
+		"UPDATE_PROFILE":"Update Profile",
+		"CHANGE_PASSWORD":"Change Password",
+		"OLD_PASS":"Old Password",
+		"NEW_PASS":"New Password",
+		"CHANGE":"Change",
+		"USER_NAME"      : "Enter your username",
+		"PASSWORD"       : "Enter your password",
+		"E_MAIL"      : "Your e-mail address",
+		"COUNTRY"      : "Where are you from?",
+		"CITY"       : "Your home town",
+		"LAB_USER_NAME"   : "USERNAME",
+		"LAB_PASSWORD"   : "PASSWORD",
+		"LAB_E_MAIL"   : "E-MAIL",
+		"LAB_COUNTRY"   : "COUNTRY",
+		"LAB_CITY"   : "CITY",
+		"SUCCESS":{
+			"REGISTER_TITLE": "Profile updated successfully !",
+			"REGISTER_SUBTITLE": "Please verify your account using verification mail send to your registered e-mail ID.",
+			"CHANGE_PASS_SUCCESS": "Password successfully changed !"
+		},
+		"ERROR":{
+			"REG_FAILED_TITLE": "Profile update Failed !",
+			"REG_FAILED_SUB_TITLE": "Please verify your informations",
+			"CHANGE_PASS_ERROR": "Change password request failed !",
+
+			"USERNAME_REQUIRED":" * User name required",
+			"USERNAME_MIN4":" * Minimum 4 characters",
+			"USERNAME_MAX20":" * Maximum 20 characters",
+			"USERNAME_ALPHA":" * Just use alphabet and number character",
+
+			"NEW_PASSWORD_REQUIRED":" *New password required",
+			"NEW_PASSWORD_MIN4":" * New password Minimum 4 characters",
+			"NEW_PASSWORD_MAX20":" * New password Maximum 20 characters",
+
+			"OLD_PASSWORD_REQUIRED":" * Old password required",
+			"OLD_PASSWORD_MIN4":" * Old password Minimum 4 characters",
+			"OLD_PASSWORD_MAX20":" * Old password Maximum 20 characters",
+
+			"EMAIL_REQUIRED":" * e-mail required",
+			"EMAIL_PATERN":" * Email address invalid",
+
+			"COUNTRY_REQUIRED":" * Country required",
+			"COUNTRY_PATERN":" * Just use alphabet character",
+
+			"CITY_REQUIRED":" * City required",
+			"CITY_PATERN":" * Just use alphabet character"
+		}
+	},
+	"LANGUAGE": {
+		"ENGLISH": "English",
+		"CHINESE": "Chinese"
+	},
+	"SETTINGS":{
+		"TITLE": "Settings",
+		"DETAIL": "App Settings",
+		"BASIC":"Basic",
+		"ABOUT":"About",
+		"APP_LANGUAGE":"App Language",
+		"SELECT_LANGUAGE":"Select your language",
+		"SUBSCRIPTION":"Subscription",
+		"PROFILE": "Profile",
+		"LOGOUT": "Logout",
+		"HELP": "Help",
+		"APP_VERSION": "App version",
+		"VERSION":"1.0.0",
+		"LAN_UPDATE_SUCCESS":"Language updated successfully !",
+		"ARE_U_SURE_LOGOUT_TITLE":"Confirm Logout",
+		"ARE_U_SURE_LOGOUT":"Are you sure want to logout ?"
+	}
+}

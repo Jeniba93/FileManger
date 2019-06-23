@@ -1,0 +1,149 @@
+<ion-content padding
+  style="background: url('assets/images/background/app_bg.png') no-repeat center;background-size: cover;">
+  <ion-grid margin-bottom>
+    <ion-row align-items-start>
+      <ion-col col-12 margin-bottom>
+        <img class="animated fadeInDown delay-1s" [src]="data.logo" style="margin: 20px auto;" />
+        <button ion-button text-capitalize round float-right outline color="light" (click)="onEvent('onGoBack')">
+          {{'REGISTER.LOGIN' | translate}}</button>
+        <h4 ion-text color="light">{{'REGISTER.TITLE' | translate}}</h4>
+
+      </ion-col>
+      <ion-col no-padding col-12>
+     
+        <form padding card-form novalidate col-12 col-sm-12 col-md-12 (ngSubmit)="onEvent('onRegister')"
+          [formGroup]="registerform">
+          <ion-item no-padding transparent>
+            <ion-label color="dark" stacked>Name</ion-label>
+            <ion-input name="name" placeholder="Enter Name" type="text" [(ngModel)]="register.name"
+              formControlName="name" required
+              [class.error1]="!registerform.controls.name.valid && registerform.controls.name.dirty"></ion-input>
+          </ion-item>
+          <ion-item transparent no-lines
+            *ngIf="registerform.get('name').hasError('required')  && registerform.get('name').touched">
+            <div class="error"
+              *ngIf="registerform.get('name').hasError('required') && registerform.get('name').touched">
+              Name required
+            </div>
+          </ion-item>
+          <ion-item no-padding transparent>
+            <ion-label color="dark" stacked>Member ID</ion-label>
+            <ion-input placeholder="Enter Member ID" required type="text" [(ngModel)]="register.memberId"
+              formControlName="memberId"
+              [class.error1]="!registerform.controls.memberId.valid && registerform.controls.memberId.dirty">
+            </ion-input>
+          </ion-item>
+          <ion-item transparent no-lines
+            *ngIf="registerform.get('memberId').hasError('required')  && registerform.get('memberId').touched">
+            <div class="error"
+              *ngIf="registerform.get('memberId').hasError('required') && registerform.get('memberId').touched">
+              Member Id  required
+            </div>
+          </ion-item>
+          <ion-item no-padding transparent>
+            <ion-label color="dark" stacked>Upline ID</ion-label>
+            <ion-input formControlName="uplineId" placeholder="Enter Upline ID" type="text" formControlName="uplineId"
+              [(ngModel)]="register.uplineId"></ion-input>
+          </ion-item>
+          <ion-item no-padding transparent>
+            <ion-label color="dark" stacked>Email</ion-label>
+            <ion-input placeholder="Email" type="text" required formControlName="email"
+              [class.error1]="!registerform.controls.email.valid && registerform.controls.email.dirty"
+              [(ngModel)]="register.email"></ion-input>
+          </ion-item>
+          <ion-item transparent no-lines
+            *ngIf="(registerform.get('email').hasError('required') ||registerform.get('email').hasError('pattern'))  && registerform.get('email').touched">
+            <div class="error"
+              *ngIf="registerform.get('email').hasError('required') && registerform.get('email').touched">
+              Email  required
+            </div>
+            <div class="error"
+              *ngIf="registerform.get('email').hasError('pattern') && registerform.get('email').touched">
+              Invalid pattern
+            </div>
+          </ion-item>
+
+          <ion-item no-padding transparent>
+            <ion-label color="dark" stacked>Password</ion-label>
+            <ion-input placeholder="Enter Password" type="password" required [(ngModel)]="register.password"
+              formControlName="password"
+              [class.error1]="!registerform.controls.password.valid && registerform.controls.password.dirty">
+            </ion-input>
+          </ion-item>
+          <ion-item transparent no-lines
+            *ngIf="( registerform.get('password').hasError('minlength')||registerform.get('password').hasError('required'))  && registerform.get('password').touched">
+            <div class="error"
+              *ngIf="registerform.get('password').hasError('required') && registerform.get('password').touched">
+              Password required
+            </div>
+            <div class="error"
+              *ngIf="registerform.get('password').hasError('minlength') && registerform.get('password').touched">
+              Minimum 4 characters
+            </div>
+          </ion-item>
+
+          <ion-item no-padding transparent>
+            <ion-label color="dark" stacked>Confirm Password</ion-label>
+            <ion-input required formControlName="confirmPassword" placeholder="Re-enter Password" type="password"
+              [(ngModel)]="register.confirmPassword"></ion-input>
+          </ion-item>
+          <ion-item transparent no-lines
+            *ngIf="( registerform.get('confirmPassword').hasError('minlength')||registerform.get('confirmPassword').hasError('required'))  && registerform.get('confirmPassword').touched">
+            <div class="error"
+              *ngIf="registerform.get('confirmPassword').hasError('required') && registerform.get('confirmPassword').touched">
+              ConfirmPassword required
+            </div>
+            <div class="error"
+              *ngIf="registerform.get('confirmPassword').hasError('minlength') && registerform.get('confirmPassword').touched">
+              Minimum 4 characters 
+            </div>
+          </ion-item>
+
+          <ion-list radio-group [(ngModel)]="register.subscription" formControlName="subscription">
+
+            <ion-item>
+              <ion-label>Subscription</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>Global</ion-label>
+              <ion-radio checked="true" value="Global"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>Regional</ion-label>
+              <ion-radio value="Regional"></ion-radio>
+            </ion-item>
+          </ion-list>
+
+          <ion-item *ngIf="register.subscription=='Regional'">
+            <ion-label>Region</ion-label>
+            <ion-select [(ngModel)]="register.region" formControlName="region">
+              <ion-option value="US">US</ion-option>
+              <ion-option value="SEA">SEA</ion-option>
+              <ion-option value="TW/HK">TW/HK</ion-option>
+              <ion-option value="VN">VN</ion-option>
+              <ion-option value="CN">CN</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label>Dual Account</ion-label>
+            <ion-checkbox color="dark" checked="true" formControlName="dualAccount" [(ngModel)]="register.dualAccount">
+            </ion-checkbox>
+          </ion-item>
+  
+          <ion-item no-lines transparent></ion-item>
+          <button ion-fab icon-only sp-theme-before-white sp-button-theme-out style="margin-top: -15px;
+          margin-left: calc(50% - 44px);
+          position: absolute;" type="submit" [disabled]="registerform.invalid">
+            <!-- type="submit" [disabled]="registerform.invalid" -->
+            <ion-icon class="siva-icon-right-big"></ion-icon>
+          </button>
+        </form>
+      
+      </ion-col>
+      <!-- <ion-col align-self-end bottom-form col-12>
+        <button ion-button round full text-capitalize color="favorite" type="submit" [disabled]="registerform.invalid">{{'REGISTER.REGISTER'
+          | translate}}</button>
+      </ion-col> -->
+    </ion-row>
+  </ion-grid>
+</ion-content>

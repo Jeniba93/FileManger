@@ -1,0 +1,119 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{'USER_PROFILE.TITLE' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="transparent-header">
+  <ion-grid>
+    <ion-row align-items-start>
+      <!-- <ion-col col-12 no-padding>
+              <button ion-button text-capitalize round float-right color="danger"
+              (click)="onEvent('onGoBack')">
+              {{'USER_PROFILE.LOGIN' | translate}}</button>
+      </ion-col> -->
+      <!-- <ion-col col-12 margin-bottom>
+          <h6 ion-text color="light">{{'USER_PROFILE.LAB_E_MAIL' | translate}} :
+              {{userUpdateModal.email}}</h6>
+        </ion-col> -->
+      <ion-col no-padding col-12>
+        <form padding card-form novalidate col-12 (ngSubmit)="onEvent('onUpdateProfile')" [formGroup]="userProfile">
+          <!---Input field username-->
+          <ion-item no-padding transparent>
+            <ion-label color="dark" stacked>NAME</ion-label>
+            <ion-input required placeholder="Enter your name" type="text" [(ngModel)]="userUpdateModal.name"
+              formControlName="username"
+              [class.error1]="!userProfile.controls.username.valid && userProfile.controls.username.dirty"></ion-input>
+          </ion-item>
+          <ion-item transparent no-lines
+            *ngIf="( userProfile.get('username').hasError('minlength') || userProfile.get('username').hasError('maxlength') ||userProfile.get('username').hasError('pattern') ||userProfile.get('username').hasError('required') ) && userProfile.get('username').touched">
+            <div class="error"
+              *ngIf="userProfile.get('username').hasError('required') && userProfile.get('username').touched">
+              {{'USER_PROFILE.ERROR.USERNAME_REQUIRED' | translate}}
+            </div>
+            <div class="error"
+              *ngIf="userProfile.get('username').hasError('minlength') && userProfile.get('username').touched">
+              {{'USER_PROFILE.ERROR.USERNAME_MIN4' | translate}}
+            </div>
+            <div class="error"
+              *ngIf="userProfile.get('username').hasError('maxlength') && userProfile.get('username').touched">
+              {{'USER_PROFILE.ERROR.USERNAME_MAX20' | translate}}
+            </div>
+            <div class="error"
+              *ngIf="userProfile.get('username').hasError('pattern') && userProfile.get('username').touched">
+              {{'USER_PROFILE.ERROR.USERNAME_ALPHA' | translate}}
+            </div>
+          </ion-item>
+          <ion-item no-padding transparent>
+            <ion-label color="dark" stacked>{{'USER_PROFILE.LAB_E_MAIL' | translate}}</ion-label>
+            <ion-input required placeholder="{{'USER_PROFILE.E_MAIL' | translate}}" type="email"
+              pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required [(ngModel)]="userUpdateModal.email"
+              formControlName="email"
+              [class.error1]="!userProfile.controls.email.valid && userProfile.controls.email.dirty"></ion-input>
+          </ion-item>
+          <ion-item transparent no-lines
+            *ngIf="( userProfile.get('email').hasError('minlength') || userProfile.get('email').hasError('pattern') ||userProfile.get('email').hasError('required') ) && userProfile.get('email').touched">
+            <div class="error"
+              *ngIf="userProfile.get('email').hasError('required') && userProfile.get('email').touched">
+              {{'USER_PROFILE.ERROR.EMAIL_REQUIRED' | translate}}
+            </div>
+            <div class="error" *ngIf="userProfile.get('email').hasError('pattern') && userProfile.get('email').touched">
+              {{'USER_PROFILE.ERROR.EMAIL_PATERN' | translate}}
+            </div>
+          </ion-item>
+          <ion-item no-padding transparent>
+            <ion-label color="dark" stacked>MEMBER ID</ion-label>
+            <ion-input disabled="true" formControlName="memberId" placeholder="Enter your member id"
+              [(ngModel)]="userUpdateModal.memberId"></ion-input>
+          </ion-item>
+          <!---Input field uplineId-->
+          <ion-item no-padding transparent>
+            <ion-label color="dark" stacked>UPLINE ID</ion-label>
+            <ion-input placeholder="Enter your upline id" type="text" pattern="[a-zA-Z0-9 ]*" required
+              [(ngModel)]="userUpdateModal.uplineId" formControlName="uplineId"
+              [class.error1]="!userProfile.controls.uplineId.valid && userProfile.controls.uplineId.dirty"></ion-input>
+          </ion-item>
+          <ion-item transparent no-lines
+            *ngIf="(userProfile.get('uplineId').hasError('pattern')) && userProfile.get('uplineId').touched">
+            <div class="error"
+              *ngIf="userProfile.get('uplineId').hasError('pattern') && userProfile.get('uplineId').touched">
+              Invalid UpLine ID
+            </div>
+          </ion-item>
+
+          
+          <!---Input field subscription-->
+          <ion-item no-padding>
+            <ion-label color="dark">SUBSCRIPTION</ion-label>
+            <ion-note item-end olor="green">{{userUpdateModal.subscription}}</ion-note>
+          </ion-item>
+          <ion-item no-padding>
+            <ion-label color="dark">VALIDITY DATE</ion-label>
+            <ion-note item-end olor="green">{{userUpdateModal.expirydate}}</ion-note>
+          </ion-item>
+          <ion-item no-padding *ngIf="userUpdateModal.subscription != 'Global'">
+            <ion-label color="dark">REGION</ion-label>
+            <ion-note item-end olor="green">{{userUpdateModal.region}}</ion-note>
+          </ion-item>
+          <ion-item no-padding>
+            <ion-label color="dark">ACCESS LEVEL</ion-label>
+            <ion-note item-end olor="green">{{userUpdateModal.accessLevel}}</ion-note>
+          </ion-item>
+
+          <ion-item no-lines transparent></ion-item>
+          <button ion-fab icon-only sp-theme-before-white sp-button-theme-out style="margin-top: -15px;
+          
+              margin-left: calc(50% - 44px);
+              position: absolute;" type="submit" [disabled]="userProfile.invalid">
+            <ion-icon class="siva-icon-right-big"></ion-icon>
+          </button>
+        </form>
+      </ion-col>
+      <ion-col text-center col-12 style="margin-top: 35px;
+      margin-bottom: 20px;">
+        <button ion-button outline round text-capitalize color="light" (click)="onEvent('onChangePassword')">
+          {{'USER_PROFILE.CHANGE_PASSWORD' | translate}}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+</ion-content>

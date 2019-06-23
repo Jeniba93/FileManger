@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{'FILE_TREE.TITLE' | translate}}</ion-title>
+  </ion-navbar>
+  <ion-navbar no-padding>
+    <ion-list no-margin>
+        <ion-list-header no-margin *ngIf="VM.sel_folder == undefined" >
+            <ion-icon padding item-start class="siva-icon-folder-open light-box" ></ion-icon>
+            <skelton-item radius="2px" height="15px" width="80%"></skelton-item>
+            <skelton-item radius="2px" height="15px" width="60%"></skelton-item>
+        </ion-list-header>
+        <ion-list-header no-margin *ngIf="VM.folder_clr != undefined && VM.sel_folder != undefined" >
+            <ion-icon padding item-start class="siva-icon-folder-open" [ngClass]="VM.folder_clr"></ion-icon>
+            <h2>{{VM.sel_folder.filename}}</h2>
+            <p style="margin-top: 5px;">{{'COMMON.TOTAL_ITEM' | translate}} <b>{{VM.sel_folder.ftotal_files}}</b></p>
+        </ion-list-header>
+    </ion-list>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-grid style="height: 100%" *ngIf="LOC_VM.noFiles && VM.files.length <= 0">
+        <ion-row justify-content-center align-items-center style="height: 100%">
+          <ion-col col-12 no-folders>
+            <ion-label text-center color="gray" >{{'FILE_TREE.NO_FOLDERS' | translate}}</ion-label>
+            <div info-image></div> 
+          </ion-col> 
+      </ion-row>
+    </ion-grid>
+    <ion-list *ngIf="!LOC_VM.noFiles && VM.files.length <= 0">
+        <button ion-item>
+            <ion-icon padding item-start class="siva-icon-doc-inv light-box" ></ion-icon>
+            <skelton-item radius="2px" height="15px" width="80%"></skelton-item>
+            <skelton-item radius="2px" height="8px" width="60%"></skelton-item>
+            <skelton-item radius="2px" height="8px" width="60%"></skelton-item>
+        </button>
+      <button ion-item>
+          <ion-icon padding item-start class="siva-icon-doc-inv light-box" ></ion-icon>
+          <skelton-item radius="2px" height="15px" width="80%"></skelton-item>
+          <skelton-item radius="2px" height="8px" width="60%"></skelton-item>
+          <skelton-item radius="2px" height="8px" width="60%"></skelton-item>
+      </button>
+      <button ion-item>
+          <ion-icon padding item-start class="siva-icon-doc-inv light-box" ></ion-icon>
+          <skelton-item radius="2px" height="15px" width="80%"></skelton-item>
+          <skelton-item radius="2px" height="8px" width="60%"></skelton-item>
+          <skelton-item radius="2px" height="8px" width="60%"></skelton-item>
+      </button>
+    </ion-list>
+    <ion-list *ngIf="VM.files.length > 0">
+        <button ion-item *ngFor="let item of VM.files; let itemIndex = index;"
+        (click)="openThisFile(item)">
+          <ion-icon padding item-start 
+            [attr.file-extension]="(item.filename).split('.').pop()" 
+            [ngClass]="getFileClass(item.filename,item.fname,item.type)">
+          </ion-icon>
+          <h2>{{item.filename}}</h2>
+          <p  style="font-size: 12px;margin-top: 5px;">{{'FILE_TREE.FILE_SIZE' | translate}} <b>{{item.ftotal_size}}</b></p>
+          <p style="font-size: 12px;margin-top: 5px;">{{'FILE_TREE.LASTUPDATE' | translate}} {{item.modifiedtime | date:"dd/MM/yyyy hh:mm a" | lowercase}}</p>
+          <a class="avatar" *ngIf="item.isnew == 1"></a> 
+          
+        </button>
+      </ion-list>
+</ion-content>

@@ -1,0 +1,17 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Video Player</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <video #pageVideo0 
+  width="100%" height="100%" muted="false" loop preload="auto" controls [controlsList]="MY_CONTROL_OPTIONS"
+  autoplay webkit-playsinline="webkit-playsinline">
+  <source src="{{filedetails.url}}" type="video/mp4">
+  <!-- <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" type="video/mp4"> -->
+</video> 
+</ion-content>

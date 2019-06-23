@@ -1,0 +1,238 @@
+{
+	"APP_NAME":"PayBF",
+	"APP_DETAILS":"使用移动应用检查您的产品",
+	"COMMON":{
+		"OK":"好",
+		"CANCEL":"取消",
+		"APPLY":"应用",
+		"CHECK":"检查",
+		"CODE":"码",
+		"LOCATION":"位置",
+		"UID":"UID",
+		"HOME":"家",
+		"HISTORY":"历史",
+		"SETTINGS":"设置",
+		"GO_TO_SETTINGS":"前往设置",
+		"EXIT":"退出应用程序",
+
+		"MSG":{
+			"NO_INTERNET":"没有网络连接",
+			"NO_INTERNET_DETAIL":"请检查您的互联网连接",
+			"ERR_SERVER_CONCTN":"服务器连接问题",
+			"ERR_SERVER_CONCTN_DETAIL":"请检查您的服务器连接或联系管理员",
+			"CHECK_LOCATION_OPT":"检查位置选项",
+			"CHECK_LOCATION_OPT_DETAIL":"请检查您的位置选项是否启用。",
+			"EMAIL_NOT_YET_ACTIVATE": "用户电子邮件尚未激活。请验证要激活的电子邮件。",
+			"EMAIL_ACTIVATE_PENDING": "电子邮件激活待处理",
+			"CURRENTLY_NO_LOCATION":"目前没有位置",
+			"SAVE_WITHOUT_LOCATION":"你确定没有位置的过程吗？",
+			"ARE_SURE_EXIT":"您确定要退出应用吗？"
+		},
+		"LOADER_MSG":{
+			"LOADING": "载入中......",
+			"LOGIN_LODER": "验证用户...",
+			"REGISTER_LODER": "处理......",
+			"LOCATION_LODER": "获取位置......"
+		}
+	},
+	"LOGIN":{
+		"USER_NAME"        : "输入用户名/电子邮件",
+		"PASSWORD"        : "输入您的密码",
+		"LAB_USER_NAME"   : "用户名 / 电子邮件",
+		"LAB_PASSWORD"   : "密码",
+		"REGISTER"        : "现在注册！",
+		"FORGOT_PASSWORD"  : "忘记密码？",
+		"LOGIN"           : "登录",
+		"TITLE"           : "登录到您的帐户",
+		"FORGOT_PASS_REQ":"密码请求",
+		"FORGOT_PASS_REQ_MSG":"我们向您注册的电子邮件发送更改密码请求URL",
+		"SEND":"发送请求",
+		"DONT_ACCOUNT":"没有账号？",
+		"SEND_ACT_MAIL":"发送激活邮件",
+
+		"SUCCESS":{
+			"LOGIN": "欢迎{{username}}！",
+			"LOGOUT": "注销成功！",
+			"FORGOT_REQ_MAIL":"请求发送成功！",
+			"RESEND_ACT_REQ_MAIL": "激活邮件重新发送成功",
+			"RESEND_ACT_REQ_MAIL_DETAIL": "请验证您的帐户，验证网址是否已发送到您注册的电子邮件ID."
+		},
+		"ERROR":{
+			"LOGIN__FAILED_TITLE": "验证失败！",
+			"LOGIN__FAILED_SUB_TITLE_1": "用户电子邮件尚未激活.",
+			"LOGIN__FAILED_SUB_TITLE_2": "请检查您的用户名或密码.",
+			"LOGIN__FAILED_SUB_TITLE_3": "不是活跃用户.",
+			"LOGIN__FAILED_SUB_TITLE_4": "找不到用户名.",
+			"FORGOT_REQ_FAILED": "忘记邮件发送失败 !",
+			"RESEND_ACT_REQ_MAIL_FAILED": "激活邮件重发失败 !",
+
+			"USERNAME_REQUIRED":" * 需要用户名",
+			"USERNAME_MIN4":" * 最少4个字符",
+			"USERNAME_MAX20":" * 最多20个字符",
+			"USERNAME_ALPHA":" * 只需使用字母和数字字符",
+			"PASSWORD_REQUIRED":" * 要求输入密码",
+			"PASSWORD_MIN4":" * 最少4个字符",
+			"PASSWORD_MAX20":" * 最多20个字符",
+			"FORGOT_REQ_MAIL":"请求发送失败！"
+		}
+	},
+	"REGISTER":{
+		"USER_NAME"      : "输入你的用户名",
+		"PASSWORD"       : "输入您的密码",
+		"E_MAIL"      : "您的电子邮件地址",
+		"COUNTRY"      : "你从哪里来？",
+		"CITY"       : "你的家乡",
+		"LAB_USER_NAME"   : "用户名",
+		"LAB_PASSWORD"   : "密码",
+		"LAB_E_MAIL"   : "电子邮件",
+		"LAB_COUNTRY"   : "国家",
+		"LAB_CITY"   : "市",
+		"REGISTER"        : "寄存器",
+		"LOGIN"           : "登录",
+		"TITLE"           : "注册您的新帐户",
+		"SUCCESS":{
+			"REGISTER_TITLE": "账户注册成功 !",
+			"REGISTER_SUBTITLE": "请验证您的帐户，验证网址是否已发送到您注册的电子邮件ID."
+		},
+		"ERROR":{
+			"REG_FAILED_TITLE": "注册失败 !",
+			"REG_FAILED_SUB_TITLE": "请验证您的信息.",
+
+			"USERNAME_REQUIRED":" * 需要用户名",
+			"USERNAME_MIN4":" * 最少4个字符",
+			"USERNAME_MAX20":" * 最多20个字符",
+			"USERNAME_ALPHA":" * 只需使用字母和数字字符",
+
+			"PASSWORD_REQUIRED":" * 要求输入密码",
+			"PASSWORD_MIN4":" * 最少4个字符",
+			"PASSWORD_MAX20":" * 最多20个字符",
+
+			"EMAIL_REQUIRED":" * 需要电子邮件",
+			"EMAIL_PATERN":" * 电邮地址无效",
+
+			"COUNTRY_REQUIRED":" * 需要国家",
+			"COUNTRY_PATERN":" * 只需使用字母字符",
+
+			"CITY_REQUIRED":" * 需要城市",
+			"CITY_PATERN":" * 只需使用字母字符"
+		}
+
+	},
+	"HOME": {
+		"BUT_SCAN_QR":"扫描BARcode / QRCode",
+		"BUT_SCAN_NFC":"扫描NFC / RFID标签",
+		"BUT_SCAN_TEXT":"键入搜索"
+	},
+	"PROD_DETLS":{
+		"FOLOWRS":"关注",
+		"VIEWS":"查看",
+		"ENTR_AUTHCODE":"请输入验证码"
+	},
+	"TYPE_TO_SEARCH":{
+		"TITLE":"键入搜索项",
+		"ITM_CODE":"项目代码",
+		"SUBMIT":"提交"
+	},
+	"NFC_SCAN_PAGE":{
+		"TITLE":"扫描NFC / RFID",
+		"TAP_TO_SCAN":"点击扫描NFC / RFID",
+		"NFC_NOT_SUPPORT":"此设备不支持NFC.",
+		"ENAB_NFC":"启用NFC",
+		"ENAM_NFC_DETAIL":"请在您的设备设置中启用nfc选项。",
+		"TAG_LISTENR_ATTACHED":"标签监听器附加"
+	},
+	"VERIFY_PRODUCT":{
+		"TITLE":"验证产品",
+		"VERIFI_CODE":"验证码",
+		"PRODUCT_ID":"产品编号 : ",
+		"VERIFY":"校验",
+		"CANCEL":"取消",
+
+		"PRODUCT":"产品",
+		"VERIFIED":"验证",
+		"SUCCESS":"成功 !",
+		"FAILED":"失败 !",
+
+		"PRO_TAGID":"标签ID :",
+		"PRO_TAP_LOC":"标记点按位置 :",
+		"PRO_NAME":"名称 :",
+		"PRO_MODEL":"模型 :",
+		"PRO_PROFILE":"轮廓 :",
+		"PRO_MANU":"生产厂家 :",
+		"PRO_MANU_ADD":"制造商地址 :",
+		"PRO_MANU_PROFILE":"制造商档案 :"
+	},
+	"HISTORY":{
+		"TITLE":"历史"
+	},
+	"USER_PROFILE":{
+		"TITLE":"用户资料",
+		"UPDATE_PROFILE":"更新个人信息",
+		"CHANGE_PASSWORD":"更改密码",
+		"OLD_PASS":"旧密码",
+		"NEW_PASS":"新密码",
+		"CHANGE":"更改",
+		"USER_NAME"      : "输入你的用户名",
+		"PASSWORD"       : "输入您的密码",
+		"E_MAIL"      : "您的电子邮件地址",
+		"COUNTRY"      : "你从哪里来?",
+		"CITY"       : "你的家乡",
+		"LAB_USER_NAME"   : "用户名",
+		"LAB_PASSWORD"   : "密码",
+		"LAB_E_MAIL"   : "电子邮件",
+		"LAB_COUNTRY"   : "国家",
+		"LAB_CITY"   : "市",
+		"SUCCESS":{
+			"REGISTER_TITLE": "资料更新成功 !",
+			"REGISTER_SUBTITLE": "请使用验证邮件验证您的帐户是否已发送到您注册的电子邮件ID.",
+			"CHANGE_PASS_SUCCESS": "密码修改成功 !"
+		},
+		"ERROR":{
+			"REG_FAILED_TITLE": "配置文件更新失败 !",
+			"REG_FAILED_SUB_TITLE": "请验证您的信息",
+			"CHANGE_PASS_ERROR": "更改密码请求失败 !",
+
+			"USERNAME_REQUIRED":" * 需要用户名",
+			"USERNAME_MIN4":" * 最少4个字符",
+			"USERNAME_MAX20":" * 最多20个字符",
+			"USERNAME_ALPHA":" * 只需使用字母和数字字符",
+
+			"NEW_PASSWORD_REQUIRED":" * 需要新密码",
+			"NEW_PASSWORD_MIN4":" * 新密码最少4个字符",
+			"NEW_PASSWORD_MAX20":" * 新密码最多20个字符",
+
+			"OLD_PASSWORD_REQUIRED":" * 需要旧密码",
+			"OLD_PASSWORD_MIN4":" * 旧密码最少4个字符",
+			"OLD_PASSWORD_MAX20":" * 旧密码最多20个字符",
+
+			"EMAIL_REQUIRED":" * 需要电子邮件",
+			"EMAIL_PATERN":" * 电邮地址无效",
+
+			"COUNTRY_REQUIRED":" * 需要国家",
+			"COUNTRY_PATERN":" * 只需使用字母字符",
+
+			"CITY_REQUIRED":" * 需要城市",
+			"CITY_PATERN":" * 只需使用字母字符"
+		}
+	},
+	"LANGUAGE": {
+		"ENGLISH": "English",
+		"CHINESE": "Chinese"
+	},
+	"SETTINGS":{
+		"TITLE": "设置",
+		"DETAIL": "应用设置",
+		"BASIC":"基本",
+		"ABOUT":"基本",
+		"APP_LANGUAGE":"应用语言",
+		"SELECT_LANGUAGE":"选择你的语言",
+		"PROFILE": "轮廓",
+		"LOGOUT": "登出",
+		"HELP": "帮帮我",
+		"APP_VERSION": "应用版本",
+		"VERSION":"1.0.0",
+		"LAN_UPDATE_SUCCESS":"语言更新成功！",
+		"ARE_U_SURE_LOGOUT_TITLE":"确认退出",
+		"ARE_U_SURE_LOGOUT":"您确定要退出吗 ?"
+	}
+}

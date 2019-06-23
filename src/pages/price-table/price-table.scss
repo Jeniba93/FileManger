@@ -1,0 +1,24 @@
+page-price-table {
+
+    [card-price]{
+        padding: 10px;
+        [price]{
+            font-size: 35px;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+            span{
+                font-size: 14px;
+                margin-right: 7px;
+                vertical-align: super;
+                font-style: italic;
+            }
+        }
+        h2{
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+        }
+        .pricing-deco-img{
+            margin: -70px -20px;
+            width: calc(100% + 40px);
+        }
+    }
+}

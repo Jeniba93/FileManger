@@ -1,0 +1,98 @@
+<ion-content padding>
+  <ion-grid >
+    <ion-row  align-self-center>
+      <ion-col col-12 margin-bottom>
+        <img class="animated fadeInDown delay-1s" [src]="data.logo" style="margin: 20px auto;">
+        <h4 ion-text color="light" login-title no-margin>{{'LOGIN.TITLE' | translate}}</h4>
+      </ion-col>
+      <ion-col col-12 margin-bottom>
+        <form padding card-form novalidate col-12 col-sm-12 col-md-12 
+          (ngSubmit)="onEvent('onLogin')" [formGroup]="loginform">
+          <ion-item no-padding margin-top transparent>
+            <ion-label color="dark" stacked>Member Id</ion-label>
+            <ion-input required type="text" placeholder="Enter Member Id" [(ngModel)]="username"
+              formControlName="username" [class.error1]="!loginform.controls.username.valid && loginform.controls.username.dirty"></ion-input>
+          </ion-item>
+          <ion-item transparent no-lines *ngIf="( loginform.get('username').hasError('minlength') || loginform.get('username').hasError('maxlength') ||loginform.get('username').hasError('pattern') ||loginform.get('username').hasError('required') ) && loginform.get('username').touched">
+            <div class="error" *ngIf="loginform.get('username').hasError('required') && loginform.get('username').touched">
+             "Member Id required"
+            </div>
+            <div class="error" *ngIf="loginform.get('username').hasError('minlength') && loginform.get('username').touched">
+              {{'LOGIN.ERROR.USERNAME_MIN4' | translate}}
+            </div>
+            <!-- <div class="error" *ngIf="loginform.get('username').hasError('maxlength') && loginform.get('username').touched">
+              {{'LOGIN.ERROR.USERNAME_MAX20' | translate}}
+            </div>
+            <div class="error" *ngIf="loginform.get('username').hasError('pattern') && loginform.get('username').touched">
+              {{'LOGIN.ERROR.USERNAME_ALPHA' | translate}}
+            </div> -->
+          </ion-item>
+          <!---Input field password-->
+          <ion-item no-padding transparent>
+            <ion-label color="dark" stacked>{{'LOGIN.LAB_PASSWORD' | translate}}</ion-label>
+            <ion-input required type="password" placeholder="{{'LOGIN.PASSWORD' | translate}}" [(ngModel)]="password"
+              formControlName="password" [class.error1]="!loginform.controls.password.valid && loginform.controls.password.dirty"></ion-input>
+          </ion-item>
+          <ion-item no-line transparent no-lines *ngIf="( loginform.get('password').hasError('minlength') || loginform.get('password').hasError('maxlength') ||loginform.get('password').hasError('required') ) && loginform.get('password').touched">
+            <div class="error" *ngIf="loginform.get('password').hasError('required') && loginform.get('password').touched">
+              {{'LOGIN.ERROR.PASSWORD_REQUIRED' | translate}}
+            </div>
+            <div class="error" *ngIf="loginform.get('password').hasError('minlength') && loginform.get('password').touched">
+              {{'LOGIN.ERROR.PASSWORD_MIN4' | translate}}
+            </div>
+            <div class="error" *ngIf="loginform.get('password').hasError('maxlength') && loginform.get('password').touched">
+              {{'LOGIN.ERROR.PASSWORD_MAX20' | translate}}
+            </div>
+          </ion-item>
+          <ion-item no-lines transparent></ion-item>
+          <button ion-fab icon-only sp-theme-before-white sp-button-theme-out style="margin-top: -15px;
+          margin-left: calc(50% - 44px);
+          position: absolute;"
+            type="submit" [disabled]="loginform.invalid">
+            <ion-icon class="siva-icon-right-big"></ion-icon>
+          </button>
+        </form>
+      </ion-col>
+      <!-- <ion-col margin-top margin-bottom col-6 >
+        <ion-label text-right color="light" style="font-size:16px;">{{'LOGIN.DONT_ACCOUNT' | translate}}</ion-label>
+      </ion-col>
+      <ion-col margin-top  margin-bottom col-6 >
+        <button ion-button round  margin-left text-capitalize sp-button-blue-out no-margin 
+        (click)="onEvent('onRegister')" style="margin-top:6px;">{{'LOGIN.REGISTER'
+          | translate}}</button>
+      </ion-col> -->
+      <ion-col margin-top text-center>
+          <button ion-button round outline text-capitalize color="light" (click)="onEvent('onRegister')">
+            Register your account</button>
+        </ion-col>
+      <ion-col col-12  text-center>
+        <!-- <ion-item no-lines my_selection sp-button-red-out style="height:48px !important;width:48px !important;">
+          <ion-label><i class="icon siva-icon-language-1"></i></ion-label>
+          <ion-select style="opacity:0;" [(ngModel)]="languageSelect.selectedItem" (ionChange)="onChangeLanguage()"
+            multiple="false" [selectOptions]="{'title':(languageSelect.title | translate),'subTitle':(languageSelect.subTitle | translate)}"
+            okText="{{'COMMON.APPLY' | translate}}" cancelText="{{'COMMON.CANCEL' | translate}}">
+            <ion-option *ngFor="let item of languageSelect.items" [value]="item.id" [selected]="(item.id == languageSelect.selectedItem)">{{item.TCODE
+              | translate}}</ion-option>
+          </ion-select>
+        </ion-item> -->
+        <button ion-button round outline text-capitalize color="light" (click)="onEvent('onForgot')">{{'LOGIN.FORGOT_PASSWORD'
+          | translate}}</button>
+      </ion-col>
+      <!-- <ion-col align-self-start col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+          <ion-item no-lines>
+            <ion-label>Language</ion-label>
+            <ion-select  [(ngModel)]="languageSelect.selectedItem" 
+                (ionChange)="onChangeLanguage()"
+                multiple="false" 
+                [selectOptions]="{'title':(languageSelect.title | translate),'subTitle':(languageSelect.subTitle | translate)}" 
+                okText="{{'COMMON.APPLY' | translate}}" 
+                cancelText="{{'COMMON.CANCEL' | translate}}">
+                <ion-option *ngFor="let item of languageSelect.items" [value]="item.id" [selected]="(item.id == languageSelect.selectedItem)">{{item.TCODE | translate}}</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col > -->
+      <!---End Share Section-->
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

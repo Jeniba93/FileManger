@@ -1,0 +1,10 @@
+<ion-tabs #myNavTabBar selectedIndex='0' tabsLayout="title-hide" tabsHideOnSubPages="true">
+  <ion-tab [root]="tab1Root" [rootParams]="sliderpages" tabTitle=" {{ 'COMMON.HOME' | translate }} " tabIcon="home"></ion-tab>
+  <ion-tab class="center_tab" [root]="tab2Root" tabTitle=" {{ 'COMMON.FOLDER_TREE' | translate }} " tabIcon="folder"></ion-tab> 
+  <ion-tab [root]="tab3Root" tabTitle=" {{ 'COMMON.SETTINGS' | translate }}" tabIcon="settings" ></ion-tab> 
+</ion-tabs>
+<ion-fab bottom center>
+  <button ion-fab sp-button-theme-out (click)="goToFolderTree()">
+      <ion-icon class="icon siva-icon-folder-1"></ion-icon>
+  </button>
+</ion-fab>  

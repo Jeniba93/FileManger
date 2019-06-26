@@ -7,6 +7,7 @@ export class RegisterModel
     subscription: {type: String};
     email: {type: String};
     expirydate: {type: String};
+    validityDate: {type: String};
     accessLevel:{type: number};
     _id:{type: number};
 }

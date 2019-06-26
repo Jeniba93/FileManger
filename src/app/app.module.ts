@@ -78,11 +78,10 @@ import { VideoPlayerPage } from '../pages/video-player/video-player';
     StatusBar,
     SplashScreen,
     InAppBrowser,
-    PhotoViewer,
     FileOpener,
     ToastService,
      Device,
-
+     PhotoViewer,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
     FileManagerApiProvider

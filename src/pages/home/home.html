@@ -1,6 +1,6 @@
 
 <ion-content>
-  <ion-slides #idle_screen_slider 
+  <ion-slides #idle_screen_slider *ngIf="VM.slider.pages.length"
     [autoplay] = "(VM.slider.enb_autoplay == 'true') ? VM.slider.autoplay : null"
     [loop] = "(VM.slider.loop == 'true') ? VM.slider.loop : null"
     [effect] = "(VM.slider.effect != '') ? VM.slider.effect : null"
@@ -8,10 +8,11 @@
     [pager] = "(VM.slider.pager == 'true') ? VM.slider.pager : null"
     [paginationType] = "(VM.slider.pager == 'true' && VM.slider.paginationType != '') ? VM.slider.paginationType : null"
     [slidesPerView] = "(VM.slider.slidesPerView != '') ? VM.slider.slidesPerView : null"
+    
 
    (ionSlideWillChange)="onSlideChanged()">
     <ion-slide  *ngFor="let slide of VM.slider.pages; let pageIndex = index"
-      [ngStyle]="{'background-image' : 'url(' + serverURL + slide.url + '), url(assets/images/background/no_file_slider.png)'}">
+      [ngStyle]="{'background-image' : 'url('+ slide.url + '), url(assets/images/background/no_file_slider.png)'}">
       <!-- <div custom-html-block [innerHtml]="slide.htmlBody | safeHtml"></div> -->
     </ion-slide>
   </ion-slides>

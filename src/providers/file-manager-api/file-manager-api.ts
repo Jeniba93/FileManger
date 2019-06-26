@@ -21,7 +21,7 @@ export class FileManagerApiProvider {
   }
 
   getfilebyuseraccess(foldername){
-    return this.http.get(this.serverURL+'/files/getfilebyuseraccess1?folderid='+foldername,  { headers: this.COM_headers }).map(res => res);
+    return this.http.get(this.serverURL+'/files/getfilebyuseraccess?folder='+foldername,  { headers: this.COM_headers }).map(res => res);
   }
 
   getslider(){
@@ -30,7 +30,7 @@ export class FileManagerApiProvider {
   }
 
   getfolderdetails(){
-    return this.http.get(this.serverURL+'/files/getfolderdetails1',  { headers: this.COM_headers }).map(res => res);
+    return this.http.get(this.serverURL+'/files/getfolderdetails',  { headers: this.COM_headers }).map(res => res);
   }
   
   updatefileaccess(data){

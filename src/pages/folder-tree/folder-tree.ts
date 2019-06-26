@@ -35,15 +35,15 @@ export class FolderTreePage {
 
         var folderdetails =
           [
-            { "fName": "NP Lumispa", "foldername": "folder1", "fStatus": "new", "fuplaod_date": "2018/11/03 14:21:20", "fupdate_date": "2018/11/03 16:21:20", "ftotal_files": 6,"id":"5d0cb6e9c501db04e8e18b04" },
-            { "fName": "New Builder Check List", "foldername": "folder2", "fStatus": "new", "fuplaod_date": "2018/11/03 14:21:20", "fupdate_date": "2018/11/03 16:21:20", "ftotal_files": 0,"id":"2" },
-            { "fName": "Presentation", "foldername": "folder3", "fStatus": "new", "fuplaod_date": "2018/11/03 14:21:20", "fupdate_date": "2018/11/03 16:21:20", "ftotal_files": 31,"id":"3" },
-            { "fName": "Product Knowledge", "foldername": "folder4", "fStatus": "new", "fuplaod_date": "2018/11/03 14:21:20", "fupdate_date": "2018/11/03 16:21:20", "ftotal_files": 87,"id":"2" },
-            { "fName": "Case Flow", "foldername": "folder5", "fStatus": "new", "fuplaod_date": "2018/11/03 14:21:20", "fupdate_date": "2018/11/03 16:21:20", "ftotal_files": 0,"id":"2" }
+            { "fName": "NP Lumispa", "foldername": "folder1", "fStatus": "new", "fuplaod_date": "2018/11/03 14:21:20", "fupdate_date": "2018/11/03 16:21:20", "ftotal_files": 6 },
+            { "fName": "New Builder Check List", "foldername": "folder2", "fStatus": "new", "fuplaod_date": "2018/11/03 14:21:20", "fupdate_date": "2018/11/03 16:21:20", "ftotal_files": 0 },
+            { "fName": "Presentation", "foldername": "folder3", "fStatus": "new", "fuplaod_date": "2018/11/03 14:21:20", "fupdate_date": "2018/11/03 16:21:20", "ftotal_files": 31 },
+            { "fName": "Product Knowledge", "foldername": "folder4", "fStatus": "new", "fuplaod_date": "2018/11/03 14:21:20", "fupdate_date": "2018/11/03 16:21:20", "ftotal_files": 87 },
+            { "fName": "Case Flow", "foldername": "folder5", "fStatus": "new", "fuplaod_date": "2018/11/03 14:21:20", "fupdate_date": "2018/11/03 16:21:20", "ftotal_files": 0 }
           ];
         folderdetails.forEach(function (folder) {
           var temfold = folderresult.filter(function (folderres) {
-            return folderres._id == folder.id;
+            return folderres._id == folder.foldername;
           });
           if (temfold.length == 0)
             folder.ftotal_files = 0;

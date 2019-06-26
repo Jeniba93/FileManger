@@ -53,7 +53,7 @@
         (click)="openThisFile(item)">
           <ion-icon padding item-start 
             [attr.file-extension]="(item.filename).split('.').pop()" 
-            [ngClass]="getFileClass(item.filename,item.fname,item.type)">
+            [ngClass]="getFileClass(item.filename)">
           </ion-icon>
           <h2>{{item.filename}}</h2>
           <p  style="font-size: 12px;margin-top: 5px;">{{'FILE_TREE.FILE_SIZE' | translate}} <b>{{item.ftotal_size}}</b></p>

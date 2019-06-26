@@ -28,9 +28,8 @@ export class HomePage {
         paginationType: "bullets",
         slidesPerView: "1",
         direction: "horizontal",  
-        //pages:params.data,
-        pages: [
-          {
+        pages:[],
+        /*pages: [{
             active: true,
             createdtime: "2019-01-23T05:50:26.603Z",
             id: "5c4800a23c0d231ed8db6421",
@@ -39,8 +38,7 @@ export class HomePage {
             sliderReferenceName: "Temple",
             uploadType: "U",
             url: "assets/images/background/no_file_slider.png",
-          }
-        ],
+          }        ],*/
         
       }
     }
@@ -54,11 +52,9 @@ export class HomePage {
   getSliders(){
     this.filemgrAPI.getslider().subscribe(
       (result) => {
-        console.log(result)
         this.VM.slider.pages = result;
       },
       (err) => {
-        console.log("error");
         console.log(err);
         this.showErrrorMg("Slider(s) Failed", err["error"]["message"]);
       }

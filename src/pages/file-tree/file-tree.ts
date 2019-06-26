@@ -30,10 +30,9 @@ export class FileTreePage {
         this.LOC_VM.noFiles = true;
       }else{
         this.LOC_VM.noFiles = false;
-        var foldername=this.VM['sel_folder'].id;
+        var foldername=this.VM['sel_folder'].foldername;
         this.filemgrAPI.getfilebyuseraccess(foldername).subscribe(
           (result) => {
-        
             var filesresult:any=result;
             this.VM['files']=filesresult;
             
@@ -53,7 +52,8 @@ export class FileTreePage {
   }
 
   updatefileaccess(data){
-    this.filemgrAPI.updatefileaccess({filename:data._id,foldername:data.foldername}).subscribe(
+    var deviceid =localStorage.getItem('deviceid');
+    this.filemgrAPI.updatefileaccess({filename:data._id,foldername:data.foldername,deviceid:deviceid}).subscribe(
       (result) => {
        
       },
@@ -66,7 +66,7 @@ export class FileTreePage {
 
   openThisFile(data){
     this.updatefileaccess(data);
-    let fileclass:string=this.getFileClass(data['filename'],data['fname'],data['type']);
+    let fileclass:string=this.getFileClass(data['filename']);
     if(data.type == "VU"){
       this.navCtrl.push(VideoPlayerPage,data);
     }
@@ -76,32 +76,7 @@ export class FileTreePage {
     else if (data.type == "F"){
       let browser = this.iab.create(this.serverURL +'/'+data['foldername']+'/'+data['filename'],'_system',{});
       browser.show();
-    }
-    else if (data.type == "O"){
-      this.VM['sel_folder'] = data;
-    //this.VM['folder_clr'] = this.navParams.get('clr');
-    //setTimeout(()=>{
-      if(this.VM['sel_folder']['ftotal_files'] === 0){
-        this.LOC_VM.noFiles = true;
-      }else{
-        this.LOC_VM.noFiles = false;
-        var foldername=this.VM['sel_folder']._id;
-        this.filemgrAPI.getfilebyuseraccess(foldername).subscribe(
-          (result) => {
-           
-            var filesresult:any=result;
-            this.VM['files']=filesresult;
-            
-          },
-          (err) => {
-            console.log(err);
-            this.showErrrorMg("Files(s) Failed", err["error"]["message"]);
-          }
-        );
-       
-      }
-    }
-    else{
+    }else{
       let browser = this.iab.create(data['url'],'_system',{});
       browser.show();
     }
@@ -143,20 +118,9 @@ export class FileTreePage {
     });
     errmsg.present();
   }
-  getFileClass(fileName,fname,type){
+  getFileClass(fileName){
     let fileExtension = (fileName).split('.').pop();
     let myClass="";
-    if(type=="O")
-    {
-      let fileExt = (fname).split('.').pop();
-      switch(fileExt){
-      case 'o':
-        myClass = "siva-icon-folder light-box";
-      break;
-      }
-    }
-    else
-    {
     switch(fileExtension){
       case 'c':case 'class':case 'cpp':case 'html':case 'css':case 'htm':case 'cs':case 'h':
       case 'java':case 'sh':case 'swift':case 'vb':case 'ts':case 'js':case 'php':case 'py':case 'rss':case 'xhtml':case 'cgi':case 'pl':
@@ -190,13 +154,10 @@ export class FileTreePage {
       case 'zip':case 'rar':case '7z':case 'arj':case 'deb':case 'pkg':case 'rpm':case 'tar':case 'z':
         myClass = "siva-icon-file-archive green-box";
       break;
-     
       default:
         myClass = "siva-icon-doc blue-box";
       break;
     }
-  }
     return myClass;
   }
-
 }
